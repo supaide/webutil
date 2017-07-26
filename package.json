@@ -1,0 +1,29 @@
+{
+  "name": "webutil",
+  "version": "1.0.0",
+  "description": "Functions for DOM, Array, String etc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supaide/webutil.git"
+  },
+  "keywords": [
+    "DOM",
+    "Array",
+    "String"
+  ],
+  "author": "cyij",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/supaide/webutil/issues"
+  },
+  "homepage": "https://github.com/supaide/webutil#readme",
+  "dependencies": {
+    "balajs": "^1.0.6",
+    "element-closest": "^2.0.2",
+    "object-assign": "^4.1.1"
+  }
+}
