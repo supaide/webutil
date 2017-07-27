@@ -4,7 +4,7 @@ let each = function (obj, cb) {
   }
   for (let k in obj) {
     if (obj.hasOwnProperty(k)) {
-      if (callback(k, obj[k]) === false) {
+      if (cb(k, obj[k]) === false) {
         return
       }
     }
@@ -28,7 +28,21 @@ let isEmpty = function (obj) {
   return false
 }
 
+let redefine = function (target, key, obj) {
+  let obj0 = target.prototype[key] || {}
+  each(obj, function (k) {
+    obj0[k] = obj[k]
+  })
+  Object.defineProperty(target.prototype, key, {
+    get () {
+      return obj0
+    },
+    configurable: true
+  })
+}
+
 export default {
   each,
-  isEmpty
+  isEmpty,
+  redefine
 }
